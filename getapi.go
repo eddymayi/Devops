@@ -12,9 +12,9 @@ import (
 type HostStatus struct {
 	Recordcount string `json:"recordcount"`
 	Hoststatus  []struct {
-		attributes struct {
-			ID string `json:"id"`
-		} `json:"@attributes"`
+//		attributes struct {
+//			ID string `json:"id"`
+//		} `json:"@attributes"`
 		InstanceID       string `json:"instance_id"`
 		HostID           string `json:"host_id"`
 		Name             string `json:"name"`
@@ -26,10 +26,10 @@ type HostStatus struct {
 		StatusTextLong   struct {
 		} `json:"status_text_long"`
 		CurrentState string `json:"current_state"`
-		iconImage    struct {
-		} `json:"icon_image"`
-		iconImageAlt struct {
-		} `json:"icon_image_alt"`
+//		iconImage    struct {
+//		} `json:"icon_image"`
+//		iconImageAlt struct {
+//		} `json:"icon_image_alt"`
 		PerformanceData           string `json:"performance_data"`
 		ShouldBeScheduled         string `json:"should_be_scheduled"`
 		CheckType                 string `json:"check_type"`
