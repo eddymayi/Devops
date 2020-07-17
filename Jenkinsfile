@@ -34,11 +34,20 @@ pipeline {
                     sh 'golint .'
                     //echo 'Running test'
                     //sh 'cd test && go test -v'
-                    sh 'ls -l $EXECPATH'
+                    //sh 'ls -l $EXECPATH'
                 }
             }
         }
-        
+        stage('Deploy') {
+            steps {
+               withCredentials([sshUserPrivateKey(credentialsId: "jvssh", keyFileVariable: 'keyfile')]) {
+          sh  """
+          ssh -i ${keyfile} jenkinsuser@v141008m-adm  'uname -a'
+          """
+          }    
+         }
+        }
+ 
     }
     post {
         always {
