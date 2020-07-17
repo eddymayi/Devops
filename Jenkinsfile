@@ -7,6 +7,7 @@ pipeline {
         GO114MODULE = 'on'
         CGO_ENABLED = 0 
         GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+        EXECPATH = "${env.WORKSPACE}" + "/" + "nagv"
     }
     stages {        
         stage('Pre Test') {
@@ -33,6 +34,7 @@ pipeline {
                     sh 'golint .'
                     //echo 'Running test'
                     //sh 'cd test && go test -v'
+                    sh 'ls -l $EXECPATH'
                 }
             }
         }
