@@ -42,7 +42,7 @@ pipeline {
             steps {
                withCredentials([sshUserPrivateKey(credentialsId: "jvssh", keyFileVariable: 'keyfile')]) {
           sh  """
-          ssh -i ${keyfile} jenkinsuser@v141008m-adm  'uname -a'
+          ssh -oStrictHostKeyChecking=no -i ${keyfile} jenkinsuser@v141008m-adm  'uname -a'
           """
           }    
          }
