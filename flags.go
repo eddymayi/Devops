@@ -8,7 +8,7 @@ type Config struct {
 }
 
 func (c *Config) Setup() {
-	flag.StringVar(&c.fqdn, "h", "nagiosxi.site.local",
+	flag.StringVar(&c.fqdn, "h", "freeipa.xemlabs.local",
 		"Name of the site, fqdn preferred")
 	flag.StringVar(&c.apikey, "a", "xxxxx", "API key for Nagios XI")
 }
