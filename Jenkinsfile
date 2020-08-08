@@ -42,7 +42,7 @@ pipeline {
             steps {
                withCredentials([sshUserPrivateKey(credentialsId: "jvssh", keyFileVariable: 'keyfile')]) {
           sh  """
-          scp -oStrictHostKeyChecking=no -i ${keyfile} $EXECPATH jenkinsuser@v141008m-adm:/var/tmp 
+          scp -oStrictHostKeyChecking=no -i ${keyfile} $EXECPATH ansible@server2.xemlabs.local:/var/tmp 
           """
           }    
          }
